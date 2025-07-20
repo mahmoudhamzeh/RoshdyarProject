@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: 'Vazirmatn', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7f9; /* رنگ پس‌زمینه کمی ملایم‌تر */
+}
+
+/* تضمین می‌کند که همه عناصر فونت را به ارث ببرند */
+* {
+  font-family: inherit;
+}
