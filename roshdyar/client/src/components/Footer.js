@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import Roshdyar from './Roshdyar';
 
 const Footer = () => {
     return (
@@ -18,6 +19,7 @@ const Footer = () => {
                     <p>آدرس: تهران، خیابان نوآوری، پلاک ۱۲۳</p>
                     <p>شماره تماس: ۰۲۱-۱۲۳۴۵۶۷۸</p>
                 </div>
+                <Roshdyar />
             </div>
             <div className="footer-bottom">
                 <p>تمامی حقوق برای رشدیار محفوظ است. © 2024</p>

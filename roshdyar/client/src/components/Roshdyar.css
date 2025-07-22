@@ -1,0 +1,46 @@
+.roshdyar-container {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f5f5f5;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+.roshdyar-container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.roshdyar-tiles {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.roshdyar-tile {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.roshdyar-tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.roshdyar-tile-icon {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.roshdyar-tile-title {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #333;
+}

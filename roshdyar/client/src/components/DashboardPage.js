@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Carousel from './Carousel';
-import ServiceTiles from './ServiceTiles';
+import Roshdyar from './Roshdyar';
 import ContentRow from './ContentRow';
 
 const mockVideos = Array.from({ length: 8 }, (_, i) => ({
@@ -21,11 +21,13 @@ const DashboardPage = () => {
             <Navbar />
             <main>
                 <Carousel />
-                <ServiceTiles />
+                <Roshdyar />
                 <ContentRow title="ویدیوهای آموزشی و تربیتی" items={mockVideos} />
                 <ContentRow title="جدیدترین مقالات" items={mockArticles} />
             </main>
-            <Footer />
+            <div className="dashboard-footer">
+                <Footer />
+            </div>
         </div>
     );
 };
