@@ -73,4 +73,42 @@ app.post('/api/documents/:childId', upload.single('document'), (req, res) => {
 });
 app.get('/api/documents/:childId', (req, res) => res.json(medicalDocuments[req.params.childId] || []));
 
+app.get('/api/backup', (req, res) => {
+    const backupData = {
+        users,
+        children,
+        growthData,
+        medicalVisits,
+        medicalDocuments,
+        childIdCounter
+    };
+    res.json(backupData);
+});
+
+app.get('/api/stats', (req, res) => {
+    const totalChildren = children.length;
+    const averageAge = children.reduce((acc, child) => acc + child.age, 0) / (totalChildren || 1);
+    res.json({ totalChildren, averageAge: averageAge.toFixed(1) });
+});
+
+app.post('/api/restore', (req, res) => {
+    const {
+        users: restoredUsers,
+        children: restoredChildren,
+        growthData: restoredGrowthData,
+        medicalVisits: restoredMedicalVisits,
+        medicalDocuments: restoredMedicalDocuments,
+        childIdCounter: restoredChildIdCounter
+    } = req.body;
+
+    users = restoredUsers || {};
+    children = restoredChildren || [];
+    growthData = restoredGrowthData || {};
+    medicalVisits = restoredMedicalVisits || {};
+    medicalDocuments = restoredMedicalDocuments || {};
+    childIdCounter = restoredChildIdCounter || 1;
+
+    res.status(200).json({ message: 'Data restored successfully' });
+});
+
 app.listen(port, () => console.log(`Roshdyar server is listening on port ${port}`));

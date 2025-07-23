@@ -5,6 +5,31 @@ import './MyChildrenPage.css';
 const MyChildrenPage = () => {
     const history = useHistory();
     const [children, setChildren] = useState([]);
+    const [sortConfig, setSortConfig] = useState({ key: 'name', direction: 'ascending' });
+
+    const sortedChildren = React.useMemo(() => {
+        let sortableItems = [...children];
+        if (sortConfig !== null) {
+            sortableItems.sort((a, b) => {
+                if (a[sortConfig.key] < b[sortConfig.key]) {
+                    return sortConfig.direction === 'ascending' ? -1 : 1;
+                }
+                if (a[sortConfig.key] > b[sortConfig.key]) {
+                    return sortConfig.direction === 'ascending' ? 1 : -1;
+                }
+                return 0;
+            });
+        }
+        return sortableItems;
+    }, [children, sortConfig]);
+
+    const requestSort = (key) => {
+        let direction = 'ascending';
+        if (sortConfig.key === key && sortConfig.direction === 'ascending') {
+            direction = 'descending';
+        }
+        setSortConfig({ key, direction });
+    };
 
     const fetchChildren = useCallback(async () => {
         try {
@@ -38,9 +63,13 @@ const MyChildrenPage = () => {
             </nav>
             <div className="children-content-final">
                 <button onClick={() => history.push('/add-child')} className="add-child-btn-final">+ افزودن کودک جدید</button>
+                <div className="sort-options">
+                    <button onClick={() => requestSort('name')}>مرتب‌سازی بر اساس نام</button>
+                    <button onClick={() => requestSort('age')}>مرتب‌سازی بر اساس سن</button>
+                </div>
                 <div className="children-list-final">
-                    {children.length === 0 ? <p className="no-children-message">هنوز کودکی اضافه نشده است.</p> : 
-                     children.map(child => {
+                    {sortedChildren.length === 0 ? <p className="no-children-message">هنوز کودکی اضافه نشده است.</p> :
+                     sortedChildren.map(child => {
                         const avatarUrl = child.avatar && child.avatar.startsWith('/uploads') ? `http://localhost:5000${child.avatar}` : (child.avatar || 'https://i.pravatar.cc/100');
                         return (
                             <div key={child.id} className="child-card-final">
