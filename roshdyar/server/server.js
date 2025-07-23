@@ -73,4 +73,26 @@ app.post('/api/documents/:childId', upload.single('document'), (req, res) => {
 });
 app.get('/api/documents/:childId', (req, res) => res.json(medicalDocuments[req.params.childId] || []));
 
+let vaccinationCards = {};
+app.post('/api/vaccination-card/:childId', upload.single('vaccinationCard'), (req, res) => {
+    const { childId } = req.params;
+    if (!req.file) {
+        return res.status(400).json({ message: 'No file uploaded.' });
+    }
+    vaccinationCards[childId] = {
+        filePath: `/uploads/${req.file.filename}`,
+        uploadDate: new Date().toISOString().split('T')[0].replace(/-/g, '/')
+    };
+    res.status(201).json(vaccinationCards[childId]);
+});
+
+app.get('/api/vaccination-card/:childId', (req, res) => {
+    const { childId } = req.params;
+    if (vaccinationCards[childId]) {
+        res.json(vaccinationCards[childId]);
+    } else {
+        res.status(404).json({ message: 'Vaccination card not found.' });
+    }
+});
+
 app.listen(port, () => console.log(`Roshdyar server is listening on port ${port}`));

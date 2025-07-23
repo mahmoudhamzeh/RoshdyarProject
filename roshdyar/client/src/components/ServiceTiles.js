@@ -5,7 +5,7 @@ import './ServiceTiles.css';
 const services = [
     { name: 'کودکان من', icon: '👶', link: '/my-children' },
     { name: 'نمودار رشد', icon: '📈', link: '#' }, // Link will be added later
-    { name: 'واکسیناسیون', icon: '💉', link: '#' },
+    { name: 'واکسیناسیون', icon: '💉', link: '/vaccination' },
     { name: 'مشاوره با متخصص', icon: '👨‍⚕️', link: '#' },
     { name: 'مشاوره روانشناسی', icon: '🧠', link: '#' },
     { name: 'آزمایش در محل', icon: '🔬', link: '#' },

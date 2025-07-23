@@ -1,0 +1,28 @@
+.vaccination-container {
+    padding: 20px;
+    direction: rtl;
+    text-align: right;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.vaccination-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.vaccination-table th,
+.vaccination-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.vaccination-table th {
+    background-color: #f2f2f2;
+}
+
+.upload-section {
+    margin-top: 30px;
+}
