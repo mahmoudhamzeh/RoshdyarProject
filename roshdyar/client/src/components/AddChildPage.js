@@ -38,7 +38,7 @@ const AddChildPage = () => {
                 const uploadRes = await fetch('http://localhost:5000/api/upload', { method: 'POST', body: uploadData });
                 if (!uploadRes.ok) throw new Error('Failed to upload image');
                 const result = await uploadRes.json();
-                avatarPath = result.filePath;
+                avatarPath = result.filePath.replace(/\\/g, "/");
             } catch (error) { alert(error.message); setIsSubmitting(false); return; }
         }
 
