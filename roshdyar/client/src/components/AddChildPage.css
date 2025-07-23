@@ -1,11 +1,5 @@
 .add-child-page-v2 { background-color: #f0f4f8; min-height: 100vh; }
 
-.back-btn-add-child {
-    grid-column: 1; /* Move to the right */
-    justify-self: start;
-    background: none; border: none; font-size: 2rem; /* Slightly larger */ cursor: pointer; color: #555;
-}
-
 .add-child-form-container-v2 {
     max-width: 700px; margin: 2rem auto; padding: 2.5rem; background-color: #fff; border-radius: 16px; box-shadow: 0 5px 25px rgba(0,0,0,0.1);
 }

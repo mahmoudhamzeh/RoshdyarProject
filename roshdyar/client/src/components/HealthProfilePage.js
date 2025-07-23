@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import Modal from 'react-modal';
+import BackButton from './BackButton';
 import DatePicker from "react-datepicker";
 import { format } from 'date-fns';
 import "react-datepicker/dist/react-datepicker.css";
@@ -70,7 +71,10 @@ const HealthProfilePage = () => {
 
     return (
         <div className="health-profile-page">
-            <nav className="page-nav-final"><button onClick={() => history.push('/my-children')}>&larr; لیست کودکان</button><h1>پرونده سلامت</h1></nav>
+            <nav className="page-nav-final">
+                <BackButton text="کودکان من" />
+                <h1>پرونده سلامت</h1>
+            </nav>
             <header className="profile-header"><img src={avatarUrl} alt={child.name} /><div className="profile-header-info"><h2>{child.name}</h2><p>{child.age}</p></div></header>
             <main className="profile-content">
                 <div className="profile-grid">

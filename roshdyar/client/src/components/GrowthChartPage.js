@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import BackButton from './BackButton';
 import DatePicker from "react-datepicker";
 import { format, differenceInMonths, parseISO } from 'date-fns';
 import Modal from 'react-modal';
@@ -91,7 +92,11 @@ const GrowthChartPage = () => {
 
     return (
         <div className="growth-chart-page">
-            <nav className="page-nav-final"><button onClick={() => history.push('/my-children')} className="back-btn-growth">&larr; بازگشت</button><h1>پرونده رشد: {child.name}</h1><div className="nav-placeholder"></div></nav>
+            <nav className="page-nav-final">
+                <BackButton text="کودکان من" />
+                <h1>پرونده رشد: {child.name}</h1>
+                <div className="nav-placeholder"></div>
+            </nav>
             <div className="growth-content-container">
                 <button onClick={() => setIsModalOpen(true)} className="add-record-btn">+ ثبت رکورد جدید</button>
                 <Modal isOpen={isModalOpen} onRequestClose={() => setIsModalOpen(false)} className="modal" overlayClassName="overlay"><div className="modal-content"><h2>ثبت اطلاعات جدید</h2><form onSubmit={handleFormSubmit} className="growth-form-modal"><div className="form-group"><label>تاریخ</label><DatePicker selected={newRecord.date} onChange={handleDateChange} dateFormat="yyyy/MM/dd" /></div><div className="form-group"><label>قد (سانتی‌متر)</label><input type="number" name="height" value={newRecord.height} onChange={handleInputChange} required /></div><div className="form-group"><label>وزن (کیلوگرم)</label><input type="number" step="0.1" name="weight" value={newRecord.weight} onChange={handleInputChange} required /></div><div className="modal-actions"><button type="submit" className="btn-save">ثبت</button><button type="button" onClick={() => setIsModalOpen(false)} className="btn-cancel">انصراف</button></div></form></div></Modal>

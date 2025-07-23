@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import DatePicker from "react-datepicker";
+import BackButton from './BackButton';
 import { format } from 'date-fns';
 import "react-datepicker/dist/react-datepicker.css";
 import './AddChildPage.css';
@@ -55,7 +56,11 @@ const AddChildPage = () => {
 
     return (
         <div className="add-child-page-v2">
-            <nav className="page-nav-final"><button onClick={() => history.push('/my-children')} className="back-btn-add-child">&rarr;</button><h1>افزودن کودک جدید</h1><div className="nav-placeholder"></div></nav>
+            <nav className="page-nav-final">
+                <BackButton text="کودکان من" />
+                <h1>افزودن کودک جدید</h1>
+                <div className="nav-placeholder"></div>
+            </nav>
             <div className="add-child-form-container-v2">
                 <form onSubmit={handleSubmit} className="add-child-form">
                     <div className="form-group-full avatar-upload-area"><label htmlFor="avatar">عکس پروفایل</label><img src={preview || 'https://i.pravatar.cc/150?u=default'} alt="پیش‌نمایش" className="avatar-preview" /><input type="file" id="avatar" name="avatar" onChange={handleChange} accept="image/*" capture="user" /></div>

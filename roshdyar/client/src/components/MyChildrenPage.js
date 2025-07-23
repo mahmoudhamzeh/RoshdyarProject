@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
+import BackButton from './BackButton';
 import './MyChildrenPage.css';
 
 const MyChildrenPage = () => {
@@ -32,7 +33,7 @@ const MyChildrenPage = () => {
     return (
         <div className="children-page-final">
             <nav className="page-nav-final">
-                <button onClick={() => history.push('/dashboard')} className="home-btn-final"><HomeIcon /><span>صفحه اصلی</span></button>
+                <BackButton text="داشبورد" />
                 <h1>کودکان من</h1>
                 <div className="nav-placeholder"></div>
             </nav>

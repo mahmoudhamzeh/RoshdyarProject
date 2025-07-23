@@ -3,23 +3,6 @@ children-page-final { background-color: #f8f9fa; min-height: 100vh; }
 .page-nav-final h1 { grid-column: 2; text-align: center; margin: 0; font-size: 1.4rem; color: #343a40; }
 .nav-placeholder { grid-column: 3; }
 
-.back-to-dash-btn {
-    grid-column: 1;
-    justify-self: start;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.2rem; /* Arrow size */
-    color: #007bff;
-    font-weight: 500;
-}
-.back-to-dash-btn span {
-    font-size: 0.9rem; /* Text size */
-}
-
 .children-content-final { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
 .add-child-btn-final { width: 100%; padding: 0.9rem; font-size: 1.1rem; font-weight: bold; color: white; background-color: #28a745; border: none; border-radius: 10px; cursor: pointer; margin-bottom: 2rem; }
 

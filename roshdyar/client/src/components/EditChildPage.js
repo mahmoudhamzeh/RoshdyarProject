@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import DatePicker from "react-datepicker";
+import BackButton from './BackButton';
 import { format, parseISO } from 'date-fns';
 import "react-datepicker/dist/react-datepicker.css";
 import './AddChildPage.css';
@@ -74,7 +75,11 @@ const EditChildPage = () => {
 
     return (
         <div className="add-child-page-v2">
-            <nav className="page-nav-final"><button onClick={() => history.push('/my-children')} className="back-btn-add-child">&rarr;</button><h1>ویرایش اطلاعات {formData.firstName}</h1><div className="nav-placeholder"></div></nav>
+            <nav className="page-nav-final">
+                <BackButton text="کودکان من" />
+                <h1>ویرایش اطلاعات {formData.firstName}</h1>
+                <div className="nav-placeholder"></div>
+            </nav>
             <div className="add-child-form-container-v2">
                 <form onSubmit={handleSubmit} className="add-child-form">
                     <div className="form-group-full avatar-upload-area"><label>عکس پروفایل</label><img src={preview} alt="Preview" className="avatar-preview" /><input type="file" name="avatar" onChange={handleChange} accept="image/*" capture="user" /></div>

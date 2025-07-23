@@ -1,7 +1,5 @@
 .health-profile-page { background-color: #f9fafb; min-height: 100vh; }
 
-.back-btn-profile { grid-column: 1; justify-self: start; background: none; border: none; font-size: 1rem; font-weight: 500; color: #007bff; cursor: pointer; }
-
 .profile-header { background: linear-gradient(to right, #1e3c72, #2a5298); color: white; display: flex; align-items: center; padding: 2rem 3rem; gap: 1.5rem; }
 
 .profile-avatar { width: 100px; height: 100px; border-radius: 50%; border: 4px solid rgba(255, 255, 255, 0.8); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }

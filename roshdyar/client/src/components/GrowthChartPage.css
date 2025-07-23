@@ -1,16 +1,5 @@
 .growth-chart-page { background-color: #f8f9fa; min-height: 100vh; }
 
-.back-btn-growth {
-    grid-column: 1;
-    justify-self: start;
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #007bff;
-    cursor: pointer;
-}
-
 .growth-content-container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
 
 .add-record-btn { display: block; width: 100%; padding: 0.9rem; font-size: 1.1rem; font-weight: bold; color: white; background-color: #007bff; border: none; border-radius: 10px; cursor: pointer; margin-bottom: 1rem; transition: background-color 0.3s; }
