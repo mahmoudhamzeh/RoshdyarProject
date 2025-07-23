@@ -4,20 +4,20 @@ import './ServiceTiles.css';
 
 const services = [
     { name: 'کودکان من', icon: '👶', link: '/my-children' },
-    { name: 'نمودار رشد', icon: '📈' },
-    { name: 'واکسیناسیون', icon: '💉' },
-    { name: 'مشاوره با متخصص', icon: '👨‍⚕️' },
-    { name: 'مشاوره روانشناسی', icon: '🧠' },
-    { name: 'آزمایش در محل', icon: '🔬' },
-    { name: 'فروشگاه', icon: '🛒' },
-    { name: 'سرگرمی', icon: '🎮' },
+    { name: 'نمودار رشد', icon: '📈', link: '#' }, // Link will be added later
+    { name: 'واکسیناسیون', icon: '💉', link: '#' },
+    { name: 'مشاوره با متخصص', icon: '👨‍⚕️', link: '#' },
+    { name: 'مشاوره روانشناسی', icon: '🧠', link: '#' },
+    { name: 'آزمایش در محل', icon: '🔬', link: '#' },
+    { name: 'فروشگاه', icon: '🛒', link: '#' },
+    { name: 'سرگرمی', icon: '🎮', link: '#' },
 ];
 
 const ServiceTiles = () => {
     return (
         <div className="tiles-container">
             {services.map(service => (
-                <Link to={service.link || '#'} key={service.name} className="tile-link">
+                <Link to={service.link} key={service.name} className="tile-link">
                     <div className="tile">
                         <div className="tile-icon">{service.icon}</div>
                         <div className="tile-name">{service.name}</div>

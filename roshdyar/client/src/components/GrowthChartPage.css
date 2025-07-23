@@ -1,0 +1,46 @@
+.growth-chart-page { background-color: #f8f9fa; min-height: 100vh; }
+
+.back-btn-growth {
+    grid-column: 1;
+    justify-self: start;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.growth-content-container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+
+.add-record-btn { display: block; width: 100%; padding: 0.9rem; font-size: 1.1rem; font-weight: bold; color: white; background-color: #007bff; border: none; border-radius: 10px; cursor: pointer; margin-bottom: 1rem; transition: background-color 0.3s; }
+.add-record-btn:hover { background-color: #0056b3; }
+
+/* Summary Cards */
+.summary-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.summary-card { background-color: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); text-align: center; }
+.summary-card span { display: block; color: #6c757d; margin-bottom: 0.5rem; }
+.summary-card strong { font-size: 2rem; color: #343a40; margin-bottom: 0.75rem; display: block; }
+.status-label { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.85rem; font-weight: 500; color: white; }
+
+/* Modal (Popup) Styles */
+.modal { position: absolute; top: 50%; left: 50%; right: auto; bottom: auto; transform: translate(-50%, -50%); background: #fff; padding: 2rem; border-radius: 12px; max-width: 500px; width: 90%; box-shadow: 0 5px 30px rgba(0,0,0,0.2); }
+.overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.7); z-index: 1000; }
+.modal-content { display: flex; flex-direction: column; }
+.modal-content h2 { margin-top: 0; text-align: center; color: #343a40; }
+.growth-form-modal { display: flex; flex-direction: column; gap: 1.5rem; }
+.growth-form-modal .form-group { display: flex; flex-direction: column; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1rem; }
+
+/* History Table */
+.data-table-card { background-color: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.toggle-history-btn { width: 100%; background-color: #f1f3f5; border: 1px solid #dee2e6; padding: 0.8rem; font-size: 1rem; font-weight: 500; border-radius: 8px; cursor: pointer; margin-bottom: 1rem; color: #212529; }
+.data-table-card table { width: 100%; border-collapse: collapse; text-align: center; margin-top: 1rem; }
+.data-table-card th, .data-table-card td { padding: 0.8rem; border-bottom: 1px solid #e9ecef; color: #333; }
+.data-table-card th { background-color: #f8f9fa; }
+.btn-delete-record { background-color: #f8d7da; color: #721c24; border: none; border-radius: 6px; padding: 0.4rem 0.8rem; cursor: pointer; }
+
+/* Chart Styles */
+.chart-card { background-color: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.chart-card h2 { margin-top: 0; margin-bottom: 2rem; text-align: center; }
+.recharts-wrapper { direction: ltr; }
