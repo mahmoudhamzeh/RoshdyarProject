@@ -3,7 +3,7 @@ children-page-final { background-color: #f8f9fa; min-height: 100vh; }
 .page-nav-final h1 { grid-column: 2; text-align: center; margin: 0; font-size: 1.4rem; color: #343a40; }
 .nav-placeholder { grid-column: 3; }
 
-.back-to-dash-btn {
+.home-btn-final {
     grid-column: 1;
     justify-self: start;
     background: none;
@@ -12,7 +12,7 @@ children-page-final { background-color: #f8f9fa; min-height: 100vh; }
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 1.2rem; /* Arrow size */
+    font-size: 1.2rem;
     color: #007bff;
     font-weight: 500;
     transition: color 0.2s;
@@ -21,8 +21,9 @@ children-page-final { background-color: #f8f9fa; min-height: 100vh; }
 .home-btn-final:hover {
     color: #0056b3;
 }
-.back-to-dash-btn span {
-    font-size: 0.9rem; /* Text size */
+
+.home-btn-final span {
+    font-size: 0.9rem;
 }
 
 .children-content-final { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }

@@ -1,45 +1,14 @@
-.health-profile-page { background-color: #f9fafb; min-height: 100vh; }
-
-.back-btn-profile { grid-column: 1; justify-self: start; background: none; border: none; font-size: 1rem; font-weight: 500; color: #007bff; cursor: pointer; }
-
-.profile-header { background: linear-gradient(to right, #1e3c72, #2a5298); color: white; display: flex; align-items: center; padding: 2rem 3rem; gap: 1.5rem; }
-
-.profile-avatar { width: 100px; height: 100px; border-radius: 50%; border: 4px solid rgba(255, 255, 255, 0.8); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-
-.profile-header-info h2 { margin: 0; font-size: 2rem; font-weight: 700; }
-.profile-header-info p { margin: 0.5rem 0 0 0; font-size: 1.1rem; opacity: 0.9; }
-
-.profile-content { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
-
-.profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1.5rem; }
-
-.profile-card { background-color: #fff; padding: 1.5rem 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
-
-.profile-card.full-width { grid-column: 1 / -1; }
-
-.profile-card h3 { margin-top: 0; margin-bottom: 1.5rem; color: #343a40; border-bottom: 2px solid #e9ecef; padding-bottom: 0.8rem; }
-
-.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-
-.info-item { display: flex; flex-direction: column; gap: 0.3rem; }
-.info-item.full-width { grid-column: 1 / -1; }
-.info-item strong { font-weight: 600; color: #495057; }
-.info-item span { color: #6c757d; }
-
-.edit-info-btn { float: left; margin-top: 1rem; background: none; border: 1px solid #007bff; color: #007bff; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 500; }
-
-/* Visits & Documents Cards */
-.add-visit-btn, .add-document-btn { display: block; width: 100%; text-align: center; padding: 0.7rem; margin-bottom: 1rem; background-color: #e9ecef; border: 1px dashed #ced4da; border-radius: 8px; cursor: pointer; font-weight: 500; }
-
-.visits-list, .documents-list { max-height: 300px; overflow-y: auto; padding-right: 10px; }
-
-.visit-item, .document-item { border-bottom: 1px solid #f1f3f5; padding: 1rem 0; }
-.visit-item:last-child, .document-item:last-child { border-bottom: none; }
-.visit-item strong, .document-item a { font-weight: 600; }
-.visit-item p, .visit-item small, .document-item span { margin: 0.5rem 0 0 0; color: #6c757d; }
-.document-item { display: flex; justify-content: space-between; align-items: center; }
-.document-item a { text-decoration: none; color: #007bff; }
-
-/* Modal Styles */
-.modal { /* ... */ }
-.overlay { /* ... */ }
+.health-profile-container { background-color: #f8f9fa; min-height: 100vh; }
+.back-btn { background: none; border: none; font-size: 1.2rem; cursor: pointer; color: #007bff; }
+.profile-header-section { display: flex; align-items: center; gap: 1.5rem; padding: 2rem; background-color: #fff; border-bottom: 1px solid #e9ecef; }
+.profile-avatar { width: 80px; height: 80px; border-radius: 50%; }
+.profile-header-info h2 { margin: 0; font-size: 1.8rem; }
+.profile-header-info p { margin: 0.25rem 0 0; color: #6c757d; }
+.profile-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; padding: 1.5rem; }
+.summary-card { background-color: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.summary-card h4 { margin-top: 0; margin-bottom: 1rem; }
+.summary-card p { color: #6c757d; }
+.summary-card .tag { background-color: #e9ecef; color: #495057; padding: 0.25rem 0.75rem; border-radius: 16px; font-size: 0.8rem; margin: 0 0.25rem; }
+.summary-card.interactive { cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+.summary-card.interactive:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+.view-details-link { color: #007bff; font-weight: 500; display: block; margin-top: 1rem; }

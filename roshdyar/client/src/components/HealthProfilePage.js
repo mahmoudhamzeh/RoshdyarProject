@@ -69,17 +69,65 @@ const HealthProfilePage = () => {
     const avatarUrl = child.avatar && child.avatar.startsWith('/uploads') ? `http://localhost:5000${child.avatar}` : (child.avatar || 'https://i.pravatar.cc/100');
 
     return (
-        <div className="health-profile-page">
-            <nav className="page-nav-final"><button onClick={() => history.push('/my-children')}>&larr; لیست کودکان</button><h1>پرونده سلامت</h1></nav>
-            <header className="profile-header"><img src={avatarUrl} alt={child.name} /><div className="profile-header-info"><h2>{child.name}</h2><p>{child.age}</p></div></header>
-            <main className="profile-content">
-                <div className="profile-grid">
-                    <div className="profile-card"><h3>اطلاعات پایه</h3><div className="info-grid">{/* ... */}</div><button onClick={() => history.push(`/edit-child/${child.id}`)}>ویرایش</button></div>
-                    <div className="profile-card"><h3>مراجعات پزشکی</h3><button onClick={() => setIsVisitModalOpen(true)}>+ افزودن</button><div className="visits-list">{visits.map((v, i) => <div key={i}>...</div>)}</div></div>
-                    <div className="profile-card"><h3>مدارک پزشکی</h3><button onClick={() => setIsDocModalOpen(true)}>+ آپلود</button><div className="documents-list">{documents.map((d, i) => <div key={i}><a href={`http://localhost:5000${d.filePath}`} >{d.title}</a><span>{d.uploadDate}</span></div>)}</div></div>
-                    <div className="profile-card full-width"><button onClick={() => history.push(`/growth-chart/${childId}`)}>نمودار رشد</button></div>
+        <div className="health-profile-container">
+            <nav className="page-nav-final">
+                <button onClick={() => history.push('/my-children')} className="back-btn">&larr; بازگشت</button>
+                <h1>پرونده سلامت</h1>
+                <div className="nav-placeholder"></div>
+            </nav>
+            <header className="profile-header-section">
+                <img src={avatarUrl} alt={child.name} className="profile-avatar" />
+                <div className="profile-header-info">
+                    <h2>{child.name}</h2>
+                    <p>سن: {child.age}</p>
+                </div>
+            </header>
+            <main className="profile-cards-grid">
+                {/* Basic Info Card */}
+                <div className="summary-card">
+                    <h4>اطلاعات پایه</h4>
+                    <p>جنسیت: {child.gender === 'boy' ? 'پسر' : 'دختر'}</p>
+                    <p>گروه خونی: {child.bloodType}</p>
+                    <button onClick={() => history.push(`/edit-child/${child.id}`)}>ویرایش اطلاعات</button>
+                </div>
+
+                {/* Allergies Card */}
+                <div className="summary-card">
+                    <h4>آلرژی‌ها</h4>
+                    {Object.entries(child.allergies.types).filter(([_, v]) => v).map(([k]) => <span key={k} className="tag">{k}</span>)}
+                    <p>{child.allergies.description}</p>
+                </div>
+
+                {/* Special Illnesses Card */}
+                <div className="summary-card">
+                    <h4>بیماری‌های خاص</h4>
+                    {Object.entries(child.special_illnesses.types).filter(([_, v]) => v).map(([k]) => <span key={k} className="tag">{k}</span>)}
+                    <p>{child.special_illnesses.description}</p>
+                </div>
+
+                {/* Medical Visits Card */}
+                <div className="summary-card interactive" onClick={() => setIsVisitModalOpen(true)}>
+                    <h4>مراجعات پزشکی</h4>
+                    <p>تعداد مراجعات ثبت شده: {visits.length}</p>
+                    <span className="view-details-link">مشاهده و افزودن</span>
+                </div>
+
+                {/* Medical Documents Card */}
+                <div className="summary-card interactive" onClick={() => setIsDocModalOpen(true)}>
+                    <h4>مدارک پزشکی</h4>
+                    <p>تعداد مدارک ثبت شده: {documents.length}</p>
+                    <span className="view-details-link">مشاهده و آپلود</span>
+                </div>
+
+                {/* Growth Chart Card */}
+                <div className="summary-card interactive" onClick={() => history.push(`/growth-chart/${childId}`)}>
+                    <h4>نمودار رشد</h4>
+                    <p>مشاهده روند رشد کودک</p>
+                    <span className="view-details-link">مشاهده نمودار</span>
                 </div>
             </main>
+
+            {/* Modals will be updated later */}
             <Modal isOpen={isVisitModalOpen} onRequestClose={() => setIsVisitModalOpen(false)}>{/* ... Visit Modal ... */}</Modal>
             <Modal isOpen={isDocModalOpen} onRequestClose={() => setIsDocModalOpen(false)}>{/* ... Document Modal ... */}</Modal>
         </div>
